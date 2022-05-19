@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Happy Vday</title>
+        <style>
+            body {
+                background-image: url("background.png");
+                text-align: center;
+            }
+            h1 {
+                font-size: 100px;
+                color: #FFC300;
+                text-align: center;
+                font-family: head;
+            }
+            @font-face {
+                font-family: head;
+                src: url(heading.ttf);
+            }
+            .column {
+                width: 100px;
+                height: 100px;
+                display:inline-block;
+                border: #900C3F  4px solid;
+                vertical-align: top;
+                margin-top: 20px;
+                margin-left: 20px;
+                padding: 10px;
+            }
+            h2 {
+                font-size: 30px;
+                color: #FFC300;
+                text-align: center;
+                font-family: head;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Happy Vday lovely! Here's a little game for you</h1>
+        <div class="row" >
+            <div class="column" onclick="clickSquare(this, 0)">
+            </div>
+            <div class="column" onclick="clickSquare(this, 1)">
+            </div>
+            <div class="column" onclick="clickSquare(this, 2)">
+            </div>
+        </div>
+        <div class="row" >
+            <div class="column" onclick="clickSquare(this, 3)">
+            </div>
+            <div class="column" onclick="clickSquare(this, 4)">
+            </div>
+            <div class="column" onclick="clickSquare(this, 5)">
+            </div>
+        </div>
+        <div class="row" >
+            <div class="column" onclick="clickSquare(this, 6)">
+            </div>
+            <div class="column" onclick="clickSquare(this, 7)">
+            </div>
+            <div class="column" onclick="clickSquare(this, 8)">
+            </div>
+        </div>
+        <h2>Game hack: you are the bestest boy in the whole universe!</h2>
+        <script>
+            var turn = "heart";
+            var allsquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+            function clickSquare(elem, index) {
+                if (turn == "star") {
+                elem.innerHTML = "<img src='star.png'>"
+                } else {
+                elem.innerHTML = "<img src='heart.png'>"
+                }
+
+                allsquares[index] = turn;
+
+                if (turn == "heart") {
+                turn = "star"
+                } else {
+                turn = "heart"
+                }
+
+                if (allsquares[0] == allsquares[1] && allsquares[1] == allsquares[2]) {
+                    alert("you win my " + allsquares[0])
+                    location.reload()
+
+                }
+                if (allsquares[3] == allsquares[4] && allsquares[4] == allsquares[5]) {
+                    alert("you win my " + allsquares[3])
+                    location.reload()
+
+                }
+                if (allsquares[6] == allsquares[7] && allsquares[7] == allsquares[8]) {
+                    alert("you win my " + allsquares[6])
+                    location.reload()
+
+                }
+                if (allsquares[0] == allsquares[3] && allsquares[3] == allsquares[6]) {
+                    alert("you win my " + allsquares[0])
+                    location.reload()
+
+                }
+                if (allsquares[1] == allsquares[4] && allsquares[4] == allsquares[7]) {
+                    alert("you win my " + allsquares[1])
+                    location.reload()
+
+                }
+                if (allsquares[2] == allsquares[5] && allsquares[5] == allsquares[8]) {
+                    alert("you win my " + allsquares[2])
+                    location.reload()
+
+                }
+                if (allsquares[0] == allsquares[4] && allsquares[4] == allsquares[8]) {
+                    alert("you win my " + allsquares[0])
+                    location.reload()
+
+                }
+                if (allsquares[2] == allsquares[4] && allsquares[4] == allsquares[6]) {
+                    alert(allsquares[2] + "wins")
+                    location.reload()
+                }
+            }
+        </script>
+    </body>
+</html>
